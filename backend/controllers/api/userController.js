@@ -18,7 +18,7 @@ exports.createUser = async (request, response) => {
     newUser.password = undefined;
 
     // Create token
-    const token = await jwt.sign(
+    const token = jwt.sign(
       { id: newUser._id },
       process.env.JWT_SECRET_KEY,
       {

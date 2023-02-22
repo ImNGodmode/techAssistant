@@ -2,7 +2,7 @@
 const express = require("express");
 
 // IMPORT USER CONTROLLER
-const userController = require("../../controllers/api/userController");
+const userController = require('../../controllers/api/userController')
 
 // Use express to create a router
 const router = express.Router();

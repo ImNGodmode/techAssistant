@@ -4,6 +4,7 @@ export async function signUp(userData) {
     const response = await usersAPI.signUp(userData);
     const data = response.data;
     localStorage.setItem("data", JSON.stringify(data));
+    
     return response;
 }
 
@@ -18,6 +19,7 @@ export async function login(userData) {
   
     // Add token to localstorage
     localStorage.setItem("data", JSON.stringify(data));
+   
   
     // Return response
     return response;

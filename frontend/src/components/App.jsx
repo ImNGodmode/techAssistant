@@ -1,23 +1,29 @@
 import '../App.css';
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate} from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
 // import Navbar from "./Navbar";
 import { getUser } from "../utilities/users-service";
-//import HomePage from '../pages/HomePage';
+import HomePage from '../pages/HomePage';
 import GuestPage from '../pages/GuestPage';
 import AuthPage from '../pages/AuthPage';
-import HomePage from '../pages/HomePage';
+
 
  function App() {
   const [user, setUser] = useState(getUser());
+  const navigate = useNavigate();
   console.log(user)
 
   return (
   <div>
     {user ? (
     <>
-        <HomePage setUser={setUser}/>
+    {navigate('/home')}
+      <Routes>
+        <Route path='/home' element={<HomePage setUser={setUser}/>} />
+      </Routes>
+      
+        
     </>
     ) : (
         <Routes>

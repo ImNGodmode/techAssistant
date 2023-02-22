@@ -30,6 +30,7 @@ const SignIn = ({ setUser }) => {
     } catch (error) {
       setError(error.message);
     }
+    <navigate to ="/home" replace={true} />
   };
 
   return (
